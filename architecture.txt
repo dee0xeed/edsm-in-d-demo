@@ -5,7 +5,7 @@ MQ == "Message Queue"
 EC == "Event Capture"
 OS == "Operating System"
 
-SM SM SM ...
+SM SM SM ... SM
 |     ^^
 |     ||
 |     MD
