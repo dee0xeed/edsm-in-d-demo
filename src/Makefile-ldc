@@ -1,0 +1,15 @@
+
+.PHONY: all clean cleanall
+
+all: echo-server echo-client
+
+echo-server: engine/*.d common-sm/*.d server-sm/*.d pool.d echo_server.d
+	ldc2 engine/*.d common-sm/*.d server-sm/*.d pool.d echo_server.d -of=echo-server
+
+echo-client: engine/*.d common-sm/*.d client-sm/*.d pool.d echo_client.d
+	ldc2 engine/*.d common-sm/*.d client-sm/*.d pool.d echo_client.d -of=echo-client
+
+clean:
+	rm -f `find . -name "*.o"`
+cleanall:
+	rm -f `find . -name "*.o"` echo-server echo-client
